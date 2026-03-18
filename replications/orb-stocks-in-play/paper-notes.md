@@ -17,21 +17,20 @@ The n-minute ORB has popular variants including 5-minute, 15-minute, 30-minute a
 #### Entry Conditions
 
 #### Stop Loss and Profit Target
-##### Stop Loss
-1. Step 1 — Determine the volatility (ATR)
+**<ins>Step 1 — Determine the volatility (ATR)</ins>**
 
 ATR = Average True Range, a volatility indicator introduced by J. Welles Wilder. It measures the typical daily price movement. The paper uses the example of a company called BLDR on January 22, 2024 which daily ATR = $5. The strategy sets the stop loss as 10% x ATR so 0.10 x $5 = $0.50, therefore the **Risk per share (R) = $0.50**. This means the maximum loss allowed per share is **$0.50**.
 
-2. Step 2 — Entry price
+**<ins>Step 2 — Entry price</ins>**
 
 The trade is a short position triggered when price breaks the **low of the 5-minute opening range**.
 
 Entry: 174.44
 
-3. Step 3 — Stop loss placement
+**<ins>Step 3 — Stop loss placement</ins>**
 
 Since it is a short trade, the stop loss is above the entry.
-Distance: 0.50 = 1R
+Distance: 0.50 = 1R\
 So: Stop = 174.44 + 0.50 = 174.94
 Meaning:
 **Event**	       **Price**
@@ -40,7 +39,7 @@ Stop loss	         174.94
 Risk	             $0.50 = 1R
 
 
-4. Step 4 — Exit price
+1. Step 4 — Exit price
 
 The trade is closed at the end of the day (EOD).
 Exit: 167.63
@@ -75,10 +74,10 @@ This illustrates why trend days dominate the profitability of ORB systems.
 
 Most trades might be:
 
--1R
--1R
--1R
-+13R
+-1R<br/>
+-1R<br/>
+-1R<br/>
++13R<br/>
 
 And the strategy is still strongly profitable.
 
@@ -103,9 +102,6 @@ Trade 4	      +13.6R
 
 Net = **+10.6R**
 
-That is why **profit targets often damage trend strategies**: they cut the **right tail** of the distribution.
-
-##### Profit Target
-If the stop loss was not reached intraday, they cosed the position at the end of the trading session (4:00 pm ET).
+That is why **profit targets often damage trend strategies**: they cut the **right tail** of the distribution. If the stop loss was not reached intraday, they cosed the position at the end of the trading session (4:00 pm ET).
 
 
