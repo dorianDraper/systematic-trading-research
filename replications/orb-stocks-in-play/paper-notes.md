@@ -14,18 +14,33 @@ The n-minute ORB has popular variants including 5-minute, 15-minute, 30-minute a
 * If the **first 5-minute candlestick was bearish** (meaning it closed below its opening price), the system would only take **short position** (<ins>they would not go for a long position even if the price broke above the 5-minute opening range candlestick</ins>).
 * Similarly, if the first 5-minute candlestick was **bullish** (meaning it closed above the opening price), they would stick to taking only a **long position** (<ins>they would avoid taking a short position, even if the price dropped below the 5-minute opening range candlestick</ins>).
 
+The approach is to exclude penny stocks and other low-liquidity stocks and consider stocks that meet the following requirements:
+
+1. Opening price > $5.
+2. Average trading volume over the previous 14 days >= 1,000,000 shares/day.
+3. ATR over the previous 14 days > $0.50.
+
 #### Entry Conditions
+
+With each eligible stock a stop order is placed at a level equal to the high/low of the 5-minute range, in the direction of the opening range. Example: if a stock had a **bullish** move within the first 5 minutes of trading (from 9:30 am until 9:35 am ET), place a stop order at the highest value of 5-minute opening range (aka 5-minute high). Conversely, if stock had **bearish** move within first 5 minutes, a stop oder placed at the lowest value of the 5-minute opening range (aka 5-minute low). In case of a **doji (open = close)** forming in the first 5 minutes, **no order was placed**. 
+
 
 #### Stop Loss and Profit Target
 **<ins>Step 1 — Determine the volatility (ATR)</ins>**
 
 ATR = Average True Range, a volatility indicator introduced by J. Welles Wilder. It measures the typical daily price movement. The paper uses the example of a company called BLDR on January 22, 2024 which daily ATR = $5. The strategy sets the stop loss as 10% x ATR so 0.10 x $5 = $0.50, therefore the **Risk per share (R) = $0.50**. This means the maximum loss allowed per share is **$0.50**.
+```
+ATR = $5
+10% x ATR → 0.10 x $5 = $0.50
+Risk per share (R) = $0.50
+```
 
 **<ins>Step 2 — Entry price</ins>**
 
 The trade is a short position triggered when price breaks the **low of the 5-minute opening range**.
-
+```
 Entry: 174.44
+```
 
 **<ins>Step 3 — Stop loss placement</ins>**
 
@@ -34,21 +49,20 @@ Distance: 0.50 = 1R\
 So: Stop = 174.44 + 0.50 = 174.94
 Meaning:
 **Event**	       **Price**
-Entry (short)	     174.44
-Stop loss	         174.94
-Risk	             $0.50 = 1R
+Entry (short)	     174.44</br>
+Stop loss	         174.94</br>
+Risk	             $0.50 = 1R</br>
 
-
-1. Step 4 — Exit price
+**<ins>Step 4 — Exit price</ins>**
 
 The trade is closed at the end of the day (EOD).
-Exit: 167.63
-Price movement: 174.44 - 167.63 = 6.81
+Exit: 167.63</br>
+Price movement: 174.44 - 167.63 = 6.81</br>
 Because it is a short trade, this downward move is profit.
 
-5. Step 5 — Convert profit to R multiples
+**<ins>Step 5 — Convert profit to R multiples</ins>**
 
-We divide the profit by the risk unit.
+We divide the profit by the risk unit:
 
 𝑅-multiple = Profit / Risk
 = 6.81 / 0.50 = 13.62𝑅
