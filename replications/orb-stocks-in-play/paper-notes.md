@@ -45,29 +45,33 @@ Entry: 174.44
 **<ins>Step 3 — Stop loss placement</ins>**
 
 Since it is a short trade, the stop loss is above the entry.
-Distance: 0.50 = 1R\
-So: Stop = 174.44 + 0.50 = 174.94
+Distance: 0.50 = 1R</br>
+So: Stop = 174.44 + 0.50 = 174.94</br>
 Meaning:
-**Event**	       **Price**
+```
+**Event**	         **Price**
 Entry (short)	     174.44</br>
 Stop loss	         174.94</br>
 Risk	             $0.50 = 1R</br>
+```
 
 **<ins>Step 4 — Exit price</ins>**
 
-The trade is closed at the end of the day (EOD).
-Exit: 167.63</br>
-Price movement: 174.44 - 167.63 = 6.81</br>
+The trade is closed at the end of the day (EOD):
+```
+Exit: 167.63
+Price movement: 174.44 - 167.63 = 6.81
+```
 Because it is a short trade, this downward move is profit.
 
 **<ins>Step 5 — Convert profit to R multiples</ins>**
 
 We divide the profit by the risk unit:
-
+```
 𝑅-multiple = Profit / Risk
 = 6.81 / 0.50 = 13.62𝑅
-
-So the trade produced: +13.62R
+```
+So the trade produced: **+13.62R**
 
 Meaning the profit was 13.62 times the initial risk.
 
