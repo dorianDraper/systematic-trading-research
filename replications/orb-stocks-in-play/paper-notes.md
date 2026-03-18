@@ -49,10 +49,10 @@ Distance: 0.50 = 1R</br>
 So: Stop = 174.44 + 0.50 = 174.94</br>
 Meaning:
 ```
-**Event**	         **Price**
-Entry (short)	     174.44</br>
-Stop loss	         174.94</br>
-Risk	             $0.50 = 1R</br>
+Event	             Price
+Entry (short)	     174.44
+Stop loss	         174.94
+Risk	             $0.50 = 1R
 ```
 
 **<ins>Step 4 — Exit price</ins>**
@@ -75,31 +75,35 @@ So the trade produced: **+13.62R**
 
 Meaning the profit was 13.62 times the initial risk.
 
-7. What this means in practical trading terms
+#### What this means in practical trading terms
 
 If the trader risks 1% of capital per trade, then:
 Example account:
+```
 Account size = $25,000
 Risk per trade = 1% = $250
-
-So:
-**Metric**      	**Value**
+```
+Therefore:
+```
+Metric          	Value
 Risk per trade	    $250
 Trade result	    13.62R
 Profit	            13.62 × $250 = $3,405
+```
 
 This illustrates why trend days dominate the profitability of ORB systems.
 
 Most trades might be:
-
--1R<br/>
--1R<br/>
--1R<br/>
-+13R<br/>
+```
+-1R
+-1R
+-1R
++13R
+```
 
 And the strategy is still strongly profitable.
 
-8. The deeper implication
+#### The deeper implication
 
 This example illustrates a core property of profitable strategies:
 
@@ -111,15 +115,16 @@ Few very large winners
 ```
 
 Example:
+```
+Trade	  Result
+Trade 1	  -1R
+Trade 2	  -1R
+Trade 3	  -1R
+Trade 4	  +13.6R
 
-**Trade**	**Result**
-Trade 1	      -1R
-Trade 2	      -1R
-Trade 3	      -1R
-Trade 4	      +13.6R
+Net = +10.6R
+```
 
-Net = **+10.6R**
-
-That is why **profit targets often damage trend strategies**: they cut the **right tail** of the distribution. If the stop loss was not reached intraday, they cosed the position at the end of the trading session (4:00 pm ET).
+hat is why **profit targets often damage trend strategies**: they cut the **right tail** of the distribution. If the stop loss was not reached intraday, they cosed the position at the end of the trading session (4:00 pm ET).
 
 
